@@ -1,4 +1,4 @@
-package exercicios;
+package calculoIMC;
 
 import java.util.Scanner;
 
