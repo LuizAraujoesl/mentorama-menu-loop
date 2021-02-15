@@ -122,33 +122,34 @@ public class Carro {
 		this.combustivel = combustivel;
 	}
 
-	// Sett Gett Variáveis Staticas
-	public static String getRed() {
-		System.out.println("Cor do Carro escolhida: " + RED);
-		return RED;
-	}
-	public static String getWhite() {
-		System.out.println("Cor do Carro escolhida: " + WHITE);
-		return WHITE;
-	}
-	public static String getBlack() {
-		System.out.println("Cor do Carro escolhida: " + BLACK);
-		return BLACK;
-	}
-
 	/**
 	 * 
 	 * ==========================================================================
 	 */
 
 
-	 
+
 
 	//Imprimir
 	public void imprimirValores(){
-		System.out.println("Qaunidade de Pneus: " + getQuantidadePneus());
-		System.out.println("Qaunidade de Calotas: " + getQuantidadeCalotas());
-		System.out.println("Qaunidade de Pneus: " + getQuantidadeDeParafusos());
+
+		System.out.println("\t ******* Dados Veículo *******");
+		
+	
+		System.out.println("\t Qaunidade de Pneus: " + getQuantidadePneus());
+		System.out.println("\t Qaunidade de Calotas: " + getQuantidadeCalotas());
+		System.out.println("\t Qaunidade de Parafusos: " + getQuantidadeDeParafusos());
+		System.out.println();
+
+		/**
+         * Integer Numero de Protas, Integer Numero de Chassi, String Ano de Fabricação, String Combustivel
+         */
+
+		System.out.println("\t Qaunidade de Portas: " + getNumeroDePortas());
+		System.out.println("\t Numero do Chassi: " + getNumeroDoChassi());
+		System.out.println("\t Ano de Fabricação: " + getAnoFabricacao());
+        System.out.println("\t Combustivel utilizado:  " + getCombustivel());
+
 	}
     
     
