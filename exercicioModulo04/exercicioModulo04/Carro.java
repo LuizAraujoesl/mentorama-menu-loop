@@ -145,7 +145,7 @@ public class Carro {
          * Integer Numero de Protas, Integer Numero de Chassi, String Ano de Fabricação, String Combustivel
          */
 
-		System.out.println("\t Qaunidade de Portas: " + getNumeroDePortas());
+		System.out.println("\t Qauntidade de Portas: " + getNumeroDePortas());
 		System.out.println("\t Numero do Chassi: " + getNumeroDoChassi());
 		System.out.println("\t Ano de Fabricação: " + getAnoFabricacao());
         System.out.println("\t Combustivel utilizado:  " + getCombustivel());
