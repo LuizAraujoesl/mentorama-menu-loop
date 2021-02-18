@@ -151,7 +151,7 @@ public class Alunos {
 
         System.out.println();
         System.out.println();
-        System.out.println("\t ********** Diário de Clasee **********");
+        System.out.println("\t ********** Diário de Classe **********");
 
         addDatas();
 
