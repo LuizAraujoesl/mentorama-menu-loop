@@ -58,6 +58,11 @@ public abstract class Conta {
 
     }
 
+    // methodos abstratos
+    protected abstract void sacar(double valorSaque); 
+    protected abstract void depositar(double valorDeposito);
+
+
     @Override
     public String toString() {
 

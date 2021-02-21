@@ -4,6 +4,8 @@ public class ContaPoupanca extends Conta {
 
     private int diaAniversario;
     private double taxaDeJuros;
+    protected double valorSaque;
+    protected double valorDeposito;
 
     //costrutor
     // recebendo como erança  atributos Classe Conta 
@@ -36,21 +38,44 @@ public class ContaPoupanca extends Conta {
 
     }
 
+  
+
     // obrigado a implementat methodo getSaldo()
     //methodo abstrato
    @Override
    public double getSaldo() {
+  
        return  this.saldo += this.taxaDeJuros * this.saldo;
    }
+
+
+   
+    // obrigado a implementat methodo sacar()
+    //methodo abstrato
+    @Override
+    public void sacar( double valorSaque) {
+       this.valorSaque = valorSaque;
+       this.saldo -= this.valorSaque;
+    }
+
+    // obrigado a implementat methodo sacar()
+    //methodo abstrato
+    @Override
+    public void depositar( double valorDeposito) {
+        this.valorDeposito = valorDeposito;
+        this.saldo += this.valorDeposito;
+    }
 
        // toString
     
        @Override
        public String toString() {
    
-           return "Conta{" +
-           "Saldo Conta Poupança= " + saldo +
-           "}";
+        return "Conta Poupança{" +
+        "Numero Agencia= " + this.getAgencia() +
+        ", Numero Conta= " +  this.getNumero() +
+        ", Banco= " +  this.getBanco() +
+        "}";
        }
 
 
