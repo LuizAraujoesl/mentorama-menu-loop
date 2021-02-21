@@ -1,12 +1,12 @@
 package exercicioModulo07;
 
-public class Conta {
+public abstract class Conta {
 
     // atributos
     private int agencia;
     private int numero;
     private String banco;
-    private double saldo;
+    protected double saldo;
 
     // costrutor
     public Conta(int agencia, int numero, String banco, double saldo){
@@ -50,9 +50,8 @@ public class Conta {
 
     // Getter and Setter Numero
 
-    public double getSaldo() {
-        return this.saldo;
-    }
+    public abstract double getSaldo();
+  
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;

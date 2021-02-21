@@ -2,51 +2,22 @@ package exercicioModulo07;
 
 public class Start {
 
-    // atributos
-    private int agencia;
-    private int numero;
-    private String banco;
-    private double saldo;
+    public static void main(String[] args) {
 
-    // Getter and Setter Agencia
+        //Conta c1 = new Conta(1, 1, "Banco C6", 100.00);
+        // System.out.println(c1);
 
-    public int getAgencia() {
-        return this.agencia;
-    }
+        ContaCorrente cc1 = new ContaCorrente(0001, 3576, "Banco Brasil", 100.00, 1000.00);
+        System.out.println(cc1);
+        System.out.println("Saldo total Conta Corrente= " + cc1.getSaldo());
 
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
+        System.out.println("=================================================================================");
 
-    }
-
-    // Getter and Setter Numero
-    public int getNumero() {
-        return this.numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-
-    }
-
-    // Getter and Setter Banco
-    public String getBanco() {
-        return this.banco;
-    }
-
-    public void setBanco(String banco) {
-        this.banco = banco;
-
-    }
-
-    // Getter and Setter Numero
-
-    public double getSaldo() {
-        return this.saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        ContaPoupanca p1 =  new ContaPoupanca(0003, 0003, "Itau Unibanco", 95.00, 20, 0.05);
+        System.out.println(p1);
+        System.out.println("Saldo total da Conta Poupança= " + p1.getSaldo());
+        System.out.println("Taixa de Juros % = " + p1.getTaxaDeJuros());
+        
 
     }
 
