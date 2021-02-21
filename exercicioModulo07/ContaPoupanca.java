@@ -23,8 +23,7 @@ public class ContaPoupanca extends Conta {
     }
 
     public void setDiaAniversario(int dia) {
-        this.diaAniversario = dia;
-
+            this.diaAniversario = dia;
     }
 
     // Getter and Setter dia Taxa de Juros.
@@ -44,7 +43,13 @@ public class ContaPoupanca extends Conta {
     //methodo abstrato
    @Override
    public double getSaldo() {
-  
+
+    if (this.diaAniversario != 20) {
+        this.taxaDeJuros = 0;
+        System.out.println("Você nao completou dia Aniversário sua taxa Juros % = " + this.taxaDeJuros);
+    } else if(this.diaAniversario == 20){
+         this.taxaDeJuros = 0.05;
+    }
        return  this.saldo += this.taxaDeJuros * this.saldo;
    }
 
