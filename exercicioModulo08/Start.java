@@ -7,6 +7,7 @@ public class Start {
     public static void main(String[] args) {
         // intanciando classe Scanner
         Scanner entrada = new Scanner(System.in);
+
         Conta c = new Conta();
 
 
@@ -56,6 +57,7 @@ public class Start {
                     case 5:
                         System.out.println();
                         System.out.println("\t Fazer uma transferência Pix");
+                        c.tranferirPix();
                         break;
                     case 6:
                         System.out.println();
