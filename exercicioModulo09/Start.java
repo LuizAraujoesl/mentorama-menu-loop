@@ -2,9 +2,12 @@ package exercicioModulo09;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -57,6 +60,41 @@ public class Start {
         seleciionados.forEach(c -> System.out.println("\t " + c.getCompras() + " É maior que 10"));
 
         System.out.println();// pular linha
+
+         // ===============================================================================
+         System.out.println("\t =============== Procurando Cliente que Comprou Mais Stream API ==============");
+         System.out.println(); // pular linha
+         Comparator<Cliente> comprouMais = (comprador1, comprador2) -> {
+             if(comprador1.getCompras() > comprador2.getCompras()) return 1;
+             if(comprador1.getCompras() < comprador2.getCompras()) return -1;
+             return 0;
+
+         };
+         Consumer<Cliente> maisCompra = clientes.stream().max(comprouMais).get();
+         System.out.println("\t Cliente que Fez Mais Compra:\n\t " + maisCompra );
+ 
+         System.out.println();// pular linha
+         // ===============================================================================
+
+
+         System.out.println();// pular linha
+
+         // ===============================================================================
+         System.out.println("\t =============== Procurando Cliente que Comprou Menos Stream API ==============");
+         System.out.println(); // pular linha
+         Comparator<Cliente> comprouMenos = (comprador1, comprador2) -> {
+             if(comprador1.getCompras() > comprador2.getCompras()) return -1;
+             if(comprador1.getCompras() < comprador2.getCompras()) return 1;
+             return 0;
+
+         };
+         Consumer<Cliente> menosCompra = clientes.stream().max(comprouMenos).get();
+         System.out.println("\t Cliente que Fez Menos Compra:\n\t " + menosCompra);
+ 
+         System.out.println();// pular linha
+         // ===============================================================================
+
+
 
         // ===============================================================================
         System.out.println("\t =============== Procurando Primeiro Cliente Utilizando Stream API ==============");
