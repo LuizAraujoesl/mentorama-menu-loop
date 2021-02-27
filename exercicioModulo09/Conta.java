@@ -7,6 +7,7 @@ public abstract class Conta {
     private int numero;
     private String banco;
     protected double saldo;
+    
 
     // costrutor
     public Conta(int agencia, int numero, String banco, double saldo){

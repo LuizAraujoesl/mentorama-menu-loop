@@ -1,15 +1,19 @@
 package exercicioModulo09;
 
-public class Cliente implements Autenticar {
+import java.util.function.Consumer;
+
+public class Cliente implements Autenticar, Consumer<Cliente> {
     private String nome;
     private boolean status;
     private String senha;
+    private int compras;
 
 
-    public Cliente(String nome, boolean status, String senha){
+    public Cliente(String nome, boolean status, String senha, int compras){
         this.nome = nome;
         this.status = status;
         this.senha = senha;
+        this.compras = compras;
 
     }
 
@@ -21,14 +25,19 @@ public class Cliente implements Autenticar {
         return senha;
     }
 
+    public int getCompras() {
+        return compras;
+    }
+
     @Override
     public String toString() {
 
-        return "Clientes{" +
-        "Nome= " + nome +
-        ", Status= " + status +
-        ", Senha= " + senha + 
-        "}";
+        return "Cliente { " +
+        " Nome: " + nome +
+        ", Status: " + status +
+        ", Senha:" + senha + 
+        ", Compras:" + compras +
+        " } ";
     }
 
     @Override
@@ -41,5 +50,11 @@ public class Cliente implements Autenticar {
             System.out.println("Autenticado");
             return true;
         }
+    }
+
+    @Override
+    public void accept(Cliente t) {
+        // TODO Auto-generated method stub
+
     }
 }
