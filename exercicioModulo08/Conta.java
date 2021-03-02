@@ -11,6 +11,7 @@ public class Conta extends Banco implements Tributavel {
     protected int numeroConta;
     protected String name;
     protected Double saldo;
+    protected double tributo;
 
     // construtor
     public Conta() {
@@ -59,6 +60,8 @@ public class Conta extends Banco implements Tributavel {
 
     // criação da conta CC
     public void createContaCC() {
+        
+        tributoDuplo(0.03);  // implementacao para Corrente
 
         String conta = "Conta-Corrente ->>>";
         System.out.println("\t Contrato + Tributo: " + tributo + " % ");
@@ -83,8 +86,10 @@ public class Conta extends Banco implements Tributavel {
     // criação da conta Poupanca
     public void createPoupanca() {
 
+        tributoDuplo(0.05);  // implementacao para Poupanca
+
         String conta = "Conta-Poupança ->>>";
-        System.out.println("\t Contrato + Rendimento: " + taxaJuros + " % ");
+        System.out.println("\t Contrato + Rendimento: " + tributo + " % ");
         System.out.println("\t Digite a Agência CP: ");
         int agencia = entrada.nextInt();
 
@@ -97,7 +102,7 @@ public class Conta extends Banco implements Tributavel {
 
         System.out.println("\t Digite a Saldo CP: ");
         double saldo = entrada.nextDouble();
-        saldo += (saldo * taxaJuros);
+        saldo += (saldo * tributo);
         contaCorrente.add(new Conta(conta, agencia, numeroConta, name, saldo));
 
     }// fim Conta Poupanca
@@ -184,6 +189,15 @@ public class Conta extends Banco implements Tributavel {
        
         
     }
+
+    
+   //implementando tributo Duplo
+   @Override
+   public double tributoDuplo(double tributo) {
+       this.tributo = tributo;
+       return 0;
+   }
+
 
     public int getAgencia() {
         return agencia;
